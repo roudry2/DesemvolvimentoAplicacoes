@@ -35,9 +35,15 @@
             System.Windows.Forms.Label nomeLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbFiltro = new System.Windows.Forms.ComboBox();
             this.btnFiltro = new System.Windows.Forms.Button();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.clienteSetDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.standAutoDataSet = new StandAuto.StandAutoDataSet();
             this.clienteSetTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.ClienteSetTableAdapter();
@@ -62,12 +68,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.cbFiltro = new System.Windows.Forms.ComboBox();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             contactoLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
@@ -125,14 +125,32 @@
             this.groupBox1.Controls.Add(this.clienteSetDataGridView);
             this.groupBox1.Location = new System.Drawing.Point(306, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(594, 377);
+            this.groupBox1.Size = new System.Drawing.Size(568, 377);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista de Clientes";
             // 
+            // cbFiltro
+            // 
+            this.cbFiltro.AutoCompleteCustomSource.AddRange(new string[] {
+            "Nome",
+            "NIF",
+            "Morada",
+            "Contacto"});
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFiltro.Items.AddRange(new object[] {
+            "Nome",
+            "NIF",
+            "Morada",
+            "Contacto"});
+            this.cbFiltro.Location = new System.Drawing.Point(245, 31);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Size = new System.Drawing.Size(121, 21);
+            this.cbFiltro.TabIndex = 3;
+            // 
             // btnFiltro
             // 
-            this.btnFiltro.Location = new System.Drawing.Point(171, 34);
+            this.btnFiltro.Location = new System.Drawing.Point(177, 31);
             this.btnFiltro.Name = "btnFiltro";
             this.btnFiltro.Size = new System.Drawing.Size(47, 23);
             this.btnFiltro.TabIndex = 2;
@@ -142,7 +160,7 @@
             // 
             // txtFiltrar
             // 
-            this.txtFiltrar.Location = new System.Drawing.Point(0, 37);
+            this.txtFiltrar.Location = new System.Drawing.Point(6, 34);
             this.txtFiltrar.Name = "txtFiltrar";
             this.txtFiltrar.Size = new System.Drawing.Size(165, 20);
             this.txtFiltrar.TabIndex = 1;
@@ -161,12 +179,52 @@
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn1});
             this.clienteSetDataGridView.DataSource = this.clienteSetBindingSource;
-            this.clienteSetDataGridView.Location = new System.Drawing.Point(1, 73);
+            this.clienteSetDataGridView.Location = new System.Drawing.Point(7, 70);
             this.clienteSetDataGridView.Name = "clienteSetDataGridView";
             this.clienteSetDataGridView.ReadOnly = true;
             this.clienteSetDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clienteSetDataGridView.Size = new System.Drawing.Size(545, 269);
             this.clienteSetDataGridView.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NIF";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NIF";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Morada";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Morada";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Contacto";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Contacto";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCliente";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // clienteSetBindingSource
             // 
@@ -220,7 +278,7 @@
             this.clienteSetBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.clienteSetBindingNavigator.Name = "clienteSetBindingNavigator";
             this.clienteSetBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.clienteSetBindingNavigator.Size = new System.Drawing.Size(900, 25);
+            this.clienteSetBindingNavigator.Size = new System.Drawing.Size(881, 25);
             this.clienteSetBindingNavigator.TabIndex = 3;
             this.clienteSetBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -365,7 +423,7 @@
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btnAtualizar.TabIndex = 13;
-            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.Text = "Alterar";
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
@@ -398,64 +456,6 @@
             this.btnNew.Text = "Novo";
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // cbFiltro
-            // 
-            this.cbFiltro.AutoCompleteCustomSource.AddRange(new string[] {
-            "Nome",
-            "NIF",
-            "Morada",
-            "Contacto"});
-            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFiltro.Items.AddRange(new object[] {
-            "Nome",
-            "NIF",
-            "Morada",
-            "Contacto"});
-            this.cbFiltro.Location = new System.Drawing.Point(239, 34);
-            this.cbFiltro.Name = "cbFiltro";
-            this.cbFiltro.Size = new System.Drawing.Size(121, 21);
-            this.cbFiltro.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 130;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NIF";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NIF";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 120;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Morada";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Morada";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Contacto";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Contacto";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCliente";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // frmCliente
             // 

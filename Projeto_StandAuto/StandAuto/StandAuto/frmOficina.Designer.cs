@@ -28,12 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOficina));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbCliente = new System.Windows.Forms.ListBox();
+            this.clienteSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.standAutoDataSet = new StandAuto.StandAutoDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.lblNrTele = new System.Windows.Forms.Label();
+            this.lblNif = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lblNomeCliente = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbCarros = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbServiços = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lbParcelas = new System.Windows.Forms.ListBox();
             this.btnCarros = new System.Windows.Forms.Button();
             this.btnServiços = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,16 +53,11 @@
             this.btnParcelas = new System.Windows.Forms.Button();
             this.txtDescrição = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
-            this.lbCliente = new System.Windows.Forms.ListBox();
-            this.lbCarros = new System.Windows.Forms.ListBox();
-            this.lbServiços = new System.Windows.Forms.ListBox();
-            this.lbParcelas = new System.Windows.Forms.ListBox();
-            this.lvlNomeCliente = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblNif = new System.Windows.Forms.Label();
-            this.lblNrTele = new System.Windows.Forms.Label();
-            this.lblValorTotal = new System.Windows.Forms.Label();
+            this.clienteSetTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.ClienteSetTableAdapter();
+            this.tableAdapterManager = new StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,17 +74,85 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Selecione um cliente";
             // 
+            // lbCliente
+            // 
+            this.lbCliente.DataSource = this.clienteSetBindingSource;
+            this.lbCliente.DisplayMember = "Nome";
+            this.lbCliente.FormattingEnabled = true;
+            this.lbCliente.Location = new System.Drawing.Point(7, 20);
+            this.lbCliente.Name = "lbCliente";
+            this.lbCliente.Size = new System.Drawing.Size(193, 420);
+            this.lbCliente.TabIndex = 0;
+            this.lbCliente.ValueMember = "IdCliente";
+            // 
+            // clienteSetBindingSource
+            // 
+            this.clienteSetBindingSource.DataMember = "ClienteSet";
+            this.clienteSetBindingSource.DataSource = this.standAutoDataSet;
+            // 
+            // standAutoDataSet
+            // 
+            this.standAutoDataSet.DataSetName = "StandAutoDataSet";
+            this.standAutoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.lblValorTotal);
             this.panel1.Controls.Add(this.lblNrTele);
             this.panel1.Controls.Add(this.lblNif);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.lvlNomeCliente);
+            this.panel1.Controls.Add(this.lblNomeCliente);
             this.panel1.Location = new System.Drawing.Point(236, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(656, 95);
             this.panel1.TabIndex = 1;
+            // 
+            // lblValorTotal
+            // 
+            this.lblValorTotal.AutoSize = true;
+            this.lblValorTotal.Location = new System.Drawing.Point(610, 20);
+            this.lblValorTotal.Name = "lblValorTotal";
+            this.lblValorTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblValorTotal.TabIndex = 4;
+            this.lblValorTotal.Text = "€";
+            // 
+            // lblNrTele
+            // 
+            this.lblNrTele.AutoSize = true;
+            this.lblNrTele.Location = new System.Drawing.Point(16, 66);
+            this.lblNrTele.Name = "lblNrTele";
+            this.lblNrTele.Size = new System.Drawing.Size(37, 13);
+            this.lblNrTele.TabIndex = 3;
+            this.lblNrTele.Text = "nrTele";
+            // 
+            // lblNif
+            // 
+            this.lblNif.AutoSize = true;
+            this.lblNif.Location = new System.Drawing.Point(16, 43);
+            this.lblNif.Name = "lblNif";
+            this.lblNif.Size = new System.Drawing.Size(18, 13);
+            this.lblNif.TabIndex = 2;
+            this.lblNif.Text = "nif";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(526, 20);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Valor Total:";
+            // 
+            // lblNomeCliente
+            // 
+            this.lblNomeCliente.AutoSize = true;
+            this.lblNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNomeCliente.Location = new System.Drawing.Point(3, 11);
+            this.lblNomeCliente.Name = "lblNomeCliente";
+            this.lblNomeCliente.Size = new System.Drawing.Size(234, 22);
+            this.lblNomeCliente.TabIndex = 0;
+            this.lblNomeCliente.Text = "Sem Cliente Selecionado";
+            this.lblNomeCliente.Click += new System.EventHandler(this.lvlNomeCliente_Click);
             // 
             // groupBox2
             // 
@@ -89,6 +164,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Carros";
             // 
+            // lbCarros
+            // 
+            this.lbCarros.FormattingEnabled = true;
+            this.lbCarros.Location = new System.Drawing.Point(6, 19);
+            this.lbCarros.Name = "lbCarros";
+            this.lbCarros.Size = new System.Drawing.Size(166, 290);
+            this.lbCarros.TabIndex = 0;
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.lbServiços);
@@ -98,6 +181,14 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Serviços";
+            // 
+            // lbServiços
+            // 
+            this.lbServiços.FormattingEnabled = true;
+            this.lbServiços.Location = new System.Drawing.Point(6, 19);
+            this.lbServiços.Name = "lbServiços";
+            this.lbServiços.Size = new System.Drawing.Size(166, 290);
+            this.lbServiços.TabIndex = 1;
             // 
             // groupBox4
             // 
@@ -109,6 +200,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Parcelas";
             // 
+            // lbParcelas
+            // 
+            this.lbParcelas.FormattingEnabled = true;
+            this.lbParcelas.Location = new System.Drawing.Point(6, 19);
+            this.lbParcelas.Name = "lbParcelas";
+            this.lbParcelas.Size = new System.Drawing.Size(254, 238);
+            this.lbParcelas.TabIndex = 2;
+            // 
             // btnCarros
             // 
             this.btnCarros.Location = new System.Drawing.Point(236, 439);
@@ -117,6 +216,7 @@
             this.btnCarros.TabIndex = 4;
             this.btnCarros.Text = "Adicionar Carro";
             this.btnCarros.UseVisualStyleBackColor = true;
+            this.btnCarros.Click += new System.EventHandler(this.btnCarros_Click);
             // 
             // btnServiços
             // 
@@ -168,83 +268,23 @@
             this.txtValor.Size = new System.Drawing.Size(206, 20);
             this.txtValor.TabIndex = 10;
             // 
-            // lbCliente
+            // clienteSetTableAdapter
             // 
-            this.lbCliente.FormattingEnabled = true;
-            this.lbCliente.Location = new System.Drawing.Point(7, 20);
-            this.lbCliente.Name = "lbCliente";
-            this.lbCliente.Size = new System.Drawing.Size(193, 420);
-            this.lbCliente.TabIndex = 0;
+            this.clienteSetTableAdapter.ClearBeforeFill = true;
             // 
-            // lbCarros
+            // tableAdapterManager
             // 
-            this.lbCarros.FormattingEnabled = true;
-            this.lbCarros.Location = new System.Drawing.Point(6, 19);
-            this.lbCarros.Name = "lbCarros";
-            this.lbCarros.Size = new System.Drawing.Size(166, 290);
-            this.lbCarros.TabIndex = 0;
-            // 
-            // lbServiços
-            // 
-            this.lbServiços.FormattingEnabled = true;
-            this.lbServiços.Location = new System.Drawing.Point(6, 19);
-            this.lbServiços.Name = "lbServiços";
-            this.lbServiços.Size = new System.Drawing.Size(166, 290);
-            this.lbServiços.TabIndex = 1;
-            // 
-            // lbParcelas
-            // 
-            this.lbParcelas.FormattingEnabled = true;
-            this.lbParcelas.Location = new System.Drawing.Point(6, 19);
-            this.lbParcelas.Name = "lbParcelas";
-            this.lbParcelas.Size = new System.Drawing.Size(254, 238);
-            this.lbParcelas.TabIndex = 2;
-            // 
-            // lvlNomeCliente
-            // 
-            this.lvlNomeCliente.AutoSize = true;
-            this.lvlNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lvlNomeCliente.Location = new System.Drawing.Point(3, 11);
-            this.lvlNomeCliente.Name = "lvlNomeCliente";
-            this.lvlNomeCliente.Size = new System.Drawing.Size(234, 22);
-            this.lvlNomeCliente.TabIndex = 0;
-            this.lvlNomeCliente.Text = "Sem Cliente Selecionado";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(526, 20);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Valor Total:";
-            // 
-            // lblNif
-            // 
-            this.lblNif.AutoSize = true;
-            this.lblNif.Location = new System.Drawing.Point(16, 43);
-            this.lblNif.Name = "lblNif";
-            this.lblNif.Size = new System.Drawing.Size(18, 13);
-            this.lblNif.TabIndex = 2;
-            this.lblNif.Text = "nif";
-            // 
-            // lblNrTele
-            // 
-            this.lblNrTele.AutoSize = true;
-            this.lblNrTele.Location = new System.Drawing.Point(16, 66);
-            this.lblNrTele.Name = "lblNrTele";
-            this.lblNrTele.Size = new System.Drawing.Size(37, 13);
-            this.lblNrTele.TabIndex = 3;
-            this.lblNrTele.Text = "nrTele";
-            // 
-            // lblValorTotal
-            // 
-            this.lblValorTotal.AutoSize = true;
-            this.lblValorTotal.Location = new System.Drawing.Point(610, 20);
-            this.lblValorTotal.Name = "lblValorTotal";
-            this.lblValorTotal.Size = new System.Drawing.Size(13, 13);
-            this.lblValorTotal.TabIndex = 4;
-            this.lblValorTotal.Text = "€";
+            this.tableAdapterManager.AluguerSetTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CarroSet_CarroAluguerTableAdapter = null;
+            this.tableAdapterManager.CarroSet_CarroOficinaTableAdapter = null;
+            this.tableAdapterManager.CarroSet_CarroVendaTableAdapter = null;
+            this.tableAdapterManager.CarroSetTableAdapter = null;
+            this.tableAdapterManager.ClienteSetTableAdapter = this.clienteSetTableAdapter;
+            this.tableAdapterManager.ParcelaSetTableAdapter = null;
+            this.tableAdapterManager.ServiçoSetTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VendaSetTableAdapter = null;
             // 
             // frmOficina
             // 
@@ -266,7 +306,10 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOficina";
             this.Text = "Oficina";
+            this.Load += new System.EventHandler(this.frmOficina_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -286,7 +329,7 @@
         private System.Windows.Forms.Label lblNrTele;
         private System.Windows.Forms.Label lblNif;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label lvlNomeCliente;
+        private System.Windows.Forms.Label lblNomeCliente;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox lbCarros;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -300,5 +343,9 @@
         private System.Windows.Forms.Button btnParcelas;
         private System.Windows.Forms.TextBox txtDescrição;
         private System.Windows.Forms.TextBox txtValor;
+        private StandAutoDataSet standAutoDataSet;
+        private System.Windows.Forms.BindingSource clienteSetBindingSource;
+        private StandAutoDataSetTableAdapters.ClienteSetTableAdapter clienteSetTableAdapter;
+        private StandAutoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

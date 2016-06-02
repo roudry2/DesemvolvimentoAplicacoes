@@ -36,14 +36,6 @@
             this.tableAdapterManager = new StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager();
             this.aluguerSetBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.aluguerSetBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.DGV_Aluguer = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_IDSelecionado = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -69,11 +61,19 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_DataPesquisa = new System.Windows.Forms.Label();
+            this.aluguerSetDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aluguerSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aluguerSetBindingNavigator)).BeginInit();
             this.aluguerSetBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Aluguer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aluguerSetDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // standAutoDataSet
@@ -120,88 +120,17 @@
             this.aluguerSetBindingNavigator.MovePreviousItem = null;
             this.aluguerSetBindingNavigator.Name = "aluguerSetBindingNavigator";
             this.aluguerSetBindingNavigator.PositionItem = null;
-            this.aluguerSetBindingNavigator.Size = new System.Drawing.Size(33, 25);
+            this.aluguerSetBindingNavigator.Size = new System.Drawing.Size(66, 25);
             this.aluguerSetBindingNavigator.TabIndex = 0;
             this.aluguerSetBindingNavigator.Text = "bindingNavigator1";
             // 
             // aluguerSetBindingNavigatorSaveItem
             // 
             this.aluguerSetBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.aluguerSetBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("aluguerSetBindingNavigatorSaveItem.Image")));
             this.aluguerSetBindingNavigatorSaveItem.Name = "aluguerSetBindingNavigatorSaveItem";
             this.aluguerSetBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.aluguerSetBindingNavigatorSaveItem.Text = "Save Data";
             this.aluguerSetBindingNavigatorSaveItem.Click += new System.EventHandler(this.aluguerSetBindingNavigatorSaveItem_Click);
-            // 
-            // DGV_Aluguer
-            // 
-            this.DGV_Aluguer.AutoGenerateColumns = false;
-            this.DGV_Aluguer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Aluguer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7});
-            this.DGV_Aluguer.DataSource = this.aluguerSetBindingSource;
-            this.DGV_Aluguer.Location = new System.Drawing.Point(11, 13);
-            this.DGV_Aluguer.Name = "DGV_Aluguer";
-            this.DGV_Aluguer.ReadOnly = true;
-            this.DGV_Aluguer.Size = new System.Drawing.Size(543, 220);
-            this.DGV_Aluguer.TabIndex = 1;
-            this.DGV_Aluguer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.aluguerSetDataGridView_CellClick);
-            this.DGV_Aluguer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Aluguer_CellContentClick);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdAluguer";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IdAluguer";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "DataInicio";
-            this.dataGridViewTextBoxColumn2.HeaderText = "DataInicio";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "DataFim";
-            this.dataGridViewTextBoxColumn3.HeaderText = "DataFim";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Valor";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Kms";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Kms";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "ClienteIdCliente";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ClienteIdCliente";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CarroAluguer_IdCarro";
-            this.dataGridViewTextBoxColumn7.HeaderText = "CarroAluguer_IdCarro";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // label1
             // 
@@ -220,7 +149,6 @@
             this.lbl_IDSelecionado.Size = new System.Drawing.Size(13, 13);
             this.lbl_IDSelecionado.TabIndex = 3;
             this.lbl_IDSelecionado.Text = "--";
-            this.lbl_IDSelecionado.Click += new System.EventHandler(this.llb_IDSelecionado_Click);
             // 
             // label2
             // 
@@ -430,11 +358,83 @@
             this.lbl_DataPesquisa.Text = "Entre";
             this.lbl_DataPesquisa.Visible = false;
             // 
+            // aluguerSetDataGridView
+            // 
+            this.aluguerSetDataGridView.AllowUserToAddRows = false;
+            this.aluguerSetDataGridView.AllowUserToDeleteRows = false;
+            this.aluguerSetDataGridView.AutoGenerateColumns = false;
+            this.aluguerSetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aluguerSetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn1});
+            this.aluguerSetDataGridView.DataSource = this.aluguerSetBindingSource;
+            this.aluguerSetDataGridView.Location = new System.Drawing.Point(1, 2);
+            this.aluguerSetDataGridView.Name = "aluguerSetDataGridView";
+            this.aluguerSetDataGridView.ReadOnly = true;
+            this.aluguerSetDataGridView.Size = new System.Drawing.Size(554, 220);
+            this.aluguerSetDataGridView.TabIndex = 26;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "DataInicio";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Data Inicio";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "DataFim";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Data Fim";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Valor";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Valor";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Kms";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Kms";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "ClienteIdCliente";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Id Cliente";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "CarroAluguer_IdCarro";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Id Carro";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdAluguer";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IdAluguer";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
             // frmAluguer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(773, 291);
+            this.ClientSize = new System.Drawing.Size(781, 319);
+            this.Controls.Add(this.aluguerSetDataGridView);
             this.Controls.Add(this.lbl_DataPesquisa);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -460,7 +460,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbl_IDSelecionado);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DGV_Aluguer);
             this.Controls.Add(this.aluguerSetBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmAluguer";
@@ -471,7 +470,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.aluguerSetBindingNavigator)).EndInit();
             this.aluguerSetBindingNavigator.ResumeLayout(false);
             this.aluguerSetBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Aluguer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.aluguerSetDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,14 +484,6 @@
         private StandAutoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator aluguerSetBindingNavigator;
         private System.Windows.Forms.ToolStripButton aluguerSetBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView DGV_Aluguer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_IDSelecionado;
         private System.Windows.Forms.Label label2;
@@ -518,5 +509,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_DataPesquisa;
+        private System.Windows.Forms.DataGridView aluguerSetDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
     }
 }
