@@ -91,5 +91,16 @@ namespace StandAuto
             txtNome.Enabled = true;
             txtNif.Enabled = true;
         }
+
+        private void txtFiltrar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFiltro_Click(object sender, EventArgs e)
+        {
+            
+                
+        }
     }
 }
