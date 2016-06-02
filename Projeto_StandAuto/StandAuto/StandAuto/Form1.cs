@@ -22,6 +22,9 @@ namespace StandAuto
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'standAutoDataSet.ClienteSet' table. You can move, or remove it, as needed.
+            this.clienteSetTableAdapter.Fill(this.standAutoDataSet.ClienteSet);
+            // TODO: This line of code loads data into the 'standAutoDataSet.ClienteSet' table. You can move, or remove it, as needed.
             this.WindowState = FormWindowState.Minimized;
             this.ShowInTaskbar = false;
 
@@ -30,8 +33,8 @@ namespace StandAuto
             frmSplash.Show();
             timerSp = 5;
             timerSplash.Start();
-                      
 
+            tslCliente.Text = clienteSetBindingSource.Count.ToString();
         }
 
         private void timerSplash_Tick(object sender, EventArgs e)
@@ -99,5 +102,20 @@ namespace StandAuto
             
             
         }
+
+        private void DateTimer_Tick(object sender, EventArgs e)
+        {
+            lblDateTime.Text = DateTime.Now.ToString();
+        }
+
+        private void clienteSetBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clienteSetBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.standAutoDataSet);
+
+        }
+
+      
     }
 }

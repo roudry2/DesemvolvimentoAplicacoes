@@ -36,8 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tslData = new System.Windows.Forms.ToolStripLabel();
-            this.tslHora = new System.Windows.Forms.ToolStripLabel();
+            this.lblDateTime = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.tslCliente = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
@@ -49,11 +48,18 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DateTimer = new System.Windows.Forms.Timer(this.components);
+            this.standAutoDataSet = new StandAuto.StandAutoDataSet();
+            this.clienteSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteSetTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.ClienteSetTableAdapter();
+            this.tableAdapterManager = new StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // timerSplash
@@ -105,32 +111,23 @@
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tslData,
-            this.tslHora,
+            this.lblDateTime,
             this.toolStripLabel3,
             this.tslCliente,
             this.toolStripLabel5,
             this.tslVendas,
             this.tsbSair});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 335);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 281);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.toolStrip1.Size = new System.Drawing.Size(805, 25);
             this.toolStrip1.TabIndex = 9;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // tslData
+            // lblDateTime
             // 
-            this.tslData.Name = "tslData";
-            this.tslData.Size = new System.Drawing.Size(60, 22);
-            this.tslData.Text = "**/**/**** ";
-            this.tslData.Click += new System.EventHandler(this.tslData_Click);
-            // 
-            // tslHora
-            // 
-            this.tslHora.Name = "tslHora";
-            this.tslHora.Size = new System.Drawing.Size(33, 22);
-            this.tslHora.Text = "**:** ";
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(0, 22);
             // 
             // toolStripLabel3
             // 
@@ -231,11 +228,44 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // DateTimer
+            // 
+            this.DateTimer.Enabled = true;
+            this.DateTimer.Tick += new System.EventHandler(this.DateTimer_Tick);
+            // 
+            // standAutoDataSet
+            // 
+            this.standAutoDataSet.DataSetName = "StandAutoDataSet";
+            this.standAutoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clienteSetBindingSource
+            // 
+            this.clienteSetBindingSource.DataMember = "ClienteSet";
+            this.clienteSetBindingSource.DataSource = this.standAutoDataSet;
+            // 
+            // clienteSetTableAdapter
+            // 
+            this.clienteSetTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AluguerSetTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CarroSet_CarroAluguerTableAdapter = null;
+            this.tableAdapterManager.CarroSet_CarroOficinaTableAdapter = null;
+            this.tableAdapterManager.CarroSet_CarroVendaTableAdapter = null;
+            this.tableAdapterManager.CarroSetTableAdapter = null;
+            this.tableAdapterManager.ClienteSetTableAdapter = this.clienteSetTableAdapter;
+            this.tableAdapterManager.ParcelaSetTableAdapter = null;
+            this.tableAdapterManager.ServiçoSetTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VendaSetTableAdapter = null;
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 360);
+            this.ClientSize = new System.Drawing.Size(805, 306);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label4);
@@ -259,6 +289,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,8 +308,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel tslData;
-        private System.Windows.Forms.ToolStripLabel tslHora;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripLabel tslCliente;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
@@ -285,6 +315,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripButton tsbSair;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.Timer DateTimer;
+        private System.Windows.Forms.ToolStripLabel lblDateTime;
+        private StandAutoDataSet standAutoDataSet;
+        private System.Windows.Forms.BindingSource clienteSetBindingSource;
+        private StandAutoDataSetTableAdapters.ClienteSetTableAdapter clienteSetTableAdapter;
+        private StandAutoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }
 

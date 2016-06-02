@@ -42,6 +42,9 @@ namespace StandAuto
             txtMorada.Enabled = true;
             txtNome.Enabled = true;
             txtNif.Enabled = true;
+            btnNew.Enabled = false;
+            btnAtualizar.Enabled = false;
+            btnEliminar.Enabled = false;
 
             this.clienteSetBindingNavigator.BindingSource.AddNew();
             this.clienteSetBindingNavigator.BindingSource.MoveLast();
@@ -57,6 +60,9 @@ namespace StandAuto
             txtMorada.Enabled = false;
             txtNome.Enabled = false;
             txtNif.Enabled = false;
+            btnNew.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnAtualizar.Enabled = true;
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -158,7 +164,7 @@ namespace StandAuto
                 }
 
             }
-
+            
         }
     }
 }
