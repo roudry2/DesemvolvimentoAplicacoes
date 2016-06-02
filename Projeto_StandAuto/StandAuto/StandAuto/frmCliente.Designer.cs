@@ -38,11 +38,6 @@
             this.btnFiltro = new System.Windows.Forms.Button();
             this.txtFiltrar = new System.Windows.Forms.TextBox();
             this.clienteSetDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.standAutoDataSet = new StandAuto.StandAutoDataSet();
             this.clienteSetTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.ClienteSetTableAdapter();
@@ -67,6 +62,12 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
+            this.cbFiltro = new System.Windows.Forms.ComboBox();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             contactoLabel = new System.Windows.Forms.Label();
             moradaLabel = new System.Windows.Forms.Label();
             nIFLabel = new System.Windows.Forms.Label();
@@ -118,6 +119,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbFiltro);
             this.groupBox1.Controls.Add(this.btnFiltro);
             this.groupBox1.Controls.Add(this.txtFiltrar);
             this.groupBox1.Controls.Add(this.clienteSetDataGridView);
@@ -165,43 +167,6 @@
             this.clienteSetDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.clienteSetDataGridView.Size = new System.Drawing.Size(545, 269);
             this.clienteSetDataGridView.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "NIF";
-            this.dataGridViewTextBoxColumn3.HeaderText = "NIF";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Morada";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Morada";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Contacto";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Contacto";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCliente";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // clienteSetBindingSource
             // 
@@ -434,6 +399,64 @@
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.button1_Click);
             // 
+            // cbFiltro
+            // 
+            this.cbFiltro.AutoCompleteCustomSource.AddRange(new string[] {
+            "Nome",
+            "NIF",
+            "Morada",
+            "Contacto"});
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFiltro.Items.AddRange(new object[] {
+            "Nome",
+            "NIF",
+            "Morada",
+            "Contacto"});
+            this.cbFiltro.Location = new System.Drawing.Point(239, 34);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Size = new System.Drawing.Size(121, 21);
+            this.cbFiltro.TabIndex = 3;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nome";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nome";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 130;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "NIF";
+            this.dataGridViewTextBoxColumn3.HeaderText = "NIF";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Morada";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Morada";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Contacto";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Contacto";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCliente";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -487,14 +510,15 @@
         private System.Windows.Forms.TextBox txtNif;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnNew;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAtualizar;
+        private System.Windows.Forms.ComboBox cbFiltro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnAtualizar;
     }
 }

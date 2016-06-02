@@ -17,6 +17,9 @@ namespace StandAuto
             InitializeComponent();
         }
 
+        DataRow[] foundRows;
+
+
         private void clienteSetBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -29,6 +32,7 @@ namespace StandAuto
         {
             // TODO: This line of code loads data into the 'standAutoDataSet.ClienteSet' table. You can move, or remove it, as needed.
             this.clienteSetTableAdapter.Fill(this.standAutoDataSet.ClienteSet);
+            cbFiltro.Text = "Nome";
 
         }
 
@@ -99,8 +103,64 @@ namespace StandAuto
 
         private void btnFiltro_Click(object sender, EventArgs e)
         {
+            // Variavel para o nome a procurar
+            String procura = txtFiltrar.Text;
+
+
+            // Verifica se a textbox tem alguma coisa
+            if (string.IsNullOrWhiteSpace(txtFiltrar.Text))
+            {
+                // Quando a textbox nao tem nada preenche a datagridview com todos os registos
+                clienteSetDataGridView.DataSource = clienteSetBindingSource;
+
+            }
+            // Quando a textbox tem texto
             
+            else
+            {
                 
+                // Busca a linha
+                switch (cbFiltro.SelectedItem.ToString())
+                {
+                    case "Nome":
+                         foundRows = standAutoDataSet.Tables["ClienteSet"].Select("Nome Like '%" + procura + "%'");
+                        break;
+                    case "NIF":
+                         foundRows = standAutoDataSet.Tables["ClienteSet"].Select("NIF Like '%" + procura + "%'");
+                        break;
+                    case "Morada":
+                        foundRows = standAutoDataSet.Tables["ClienteSet"].Select("Morada Like '%" + procura + "%'");
+                        break;
+                    case "Contacto":
+                        foundRows = standAutoDataSet.Tables["ClienteSet"].Select("Contacto Like '%" + procura + "%'");
+
+                        break;
+                }
+
+
+                
+
+                // Se encontrar
+                try
+                {
+
+                    // Escreve na Datagridview
+                    clienteSetDataGridView.DataSource = foundRows.CopyToDataTable();
+                }
+                // Se Nao Encontrar
+                catch (Exception ex)
+                {
+                    // Msg De erro
+                    MessageBox.Show("Nenhum resultado encontrado na BD", "Messagem Importante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    // Mete lá todos
+                    clienteSetDataGridView.DataSource = clienteSetBindingSource;
+                }
+
+            }
+
         }
     }
 }
+
+
