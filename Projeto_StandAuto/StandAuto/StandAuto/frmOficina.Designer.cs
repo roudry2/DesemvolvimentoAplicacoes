@@ -306,6 +306,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmOficina";
             this.Text = "Oficina";
+            this.Activated += new System.EventHandler(this.frmOficina_Activated);
             this.Load += new System.EventHandler(this.frmOficina_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).EndInit();

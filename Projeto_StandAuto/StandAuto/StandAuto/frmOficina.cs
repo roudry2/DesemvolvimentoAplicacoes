@@ -37,5 +37,10 @@ namespace StandAuto
             frmCriarCarro carro = new frmCriarCarro();
             carro.ShowDialog();
         }
+
+        private void frmOficina_Activated(object sender, EventArgs e)
+        {
+
+        }
     }
 }

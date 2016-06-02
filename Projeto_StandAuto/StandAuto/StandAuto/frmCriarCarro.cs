@@ -101,5 +101,11 @@ namespace StandAuto
             btnAlterar.Enabled = false;
 
         }
+
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            frmOficina open = new frmOficina();
+            open.Activate();
+        }
     }
 }
