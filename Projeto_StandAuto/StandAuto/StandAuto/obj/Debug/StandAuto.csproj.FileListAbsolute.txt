@@ -26,3 +26,17 @@ C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\S
 C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.Properties.Resources.resources
 C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmSplash.resources
 C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.csproj.GenerateResource.Cache
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\bin\Debug\StandAuto.exe.config
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.exe
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.pdb
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\bin\Debug\StandAuto.exe
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\bin\Debug\StandAuto.pdb
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.csprojResolveAssemblyReference.cache
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmInicio.resources
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmAluguer.resources
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmCliente.resources
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmOficina.resources
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmVenda.resources
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.Properties.Resources.resources
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmSplash.resources
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\DesemvolvimentoAplicacoes.git\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.csproj.GenerateResource.Cache
