@@ -42,9 +42,9 @@
             this.tslCliente = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.tslVendas = new System.Windows.Forms.ToolStripLabel();
+            this.tsbSair = new System.Windows.Forms.ToolStripButton();
             this.label5 = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
-            this.tsbSair = new System.Windows.Forms.ToolStripButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -156,6 +156,17 @@
             this.tslVendas.Size = new System.Drawing.Size(19, 22);
             this.tslVendas.Text = "€0";
             // 
+            // tsbSair
+            // 
+            this.tsbSair.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.tsbSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsbSair.Image = ((System.Drawing.Image)(resources.GetObject("tsbSair.Image")));
+            this.tsbSair.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsbSair.Name = "tsbSair";
+            this.tsbSair.Size = new System.Drawing.Size(35, 22);
+            this.tsbSair.Text = "SAIR";
+            this.tsbSair.Click += new System.EventHandler(this.tsbSair_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -171,17 +182,6 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "StandAuto";
             this.notifyIcon1.Visible = true;
-            // 
-            // tsbSair
-            // 
-            this.tsbSair.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.tsbSair.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.tsbSair.Image = ((System.Drawing.Image)(resources.GetObject("tsbSair.Image")));
-            this.tsbSair.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsbSair.Name = "tsbSair";
-            this.tsbSair.Size = new System.Drawing.Size(35, 22);
-            this.tsbSair.Text = "SAIR";
-            this.tsbSair.Click += new System.EventHandler(this.tsbSair_Click);
             // 
             // pictureBox4
             // 
@@ -250,6 +250,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StandAuto";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.toolStrip1.ResumeLayout(false);

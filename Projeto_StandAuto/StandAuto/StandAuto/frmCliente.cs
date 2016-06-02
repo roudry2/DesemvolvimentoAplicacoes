@@ -32,14 +32,64 @@ namespace StandAuto
 
         }
 
-        private void clienteSetBindingNavigator_RefreshItems(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            txtContato.Enabled = true;
+            txtMorada.Enabled = true;
+            txtNome.Enabled = true;
+            txtNif.Enabled = true;
+
+            this.clienteSetBindingNavigator.BindingSource.AddNew();
+            this.clienteSetBindingNavigator.BindingSource.MoveLast();
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.clienteSetBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.standAutoDataSet);
+            txtContato.Enabled = false;
+            txtMorada.Enabled = false;
+            txtNome.Enabled = false;
+            txtNif.Enabled = false;
+        }
+
+        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void clienteSetDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult resp;
+            resp= MessageBox.Show("Tem a certeza que pretende eliminar?","Atenção,",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+            if (resp==DialogResult.Yes)
+            {
+                this.clienteSetBindingNavigator.BindingSource.RemoveCurrent();
+                this.Validate();
+                this.clienteSetBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.standAutoDataSet);
+            }
+            else
+            {
+                return;
+            }
+
+            
+        }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAtualizar_Click(object sender, EventArgs e)
+        {
+            txtContato.Enabled = true;
+            txtMorada.Enabled = true;
+            txtNome.Enabled = true;
+            txtNif.Enabled = true;
         }
     }
 }
