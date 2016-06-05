@@ -48,7 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Auxiliar.cs" />
+    <Compile Include="ClassCarros.cs" />
+    <Compile Include="ClassCliente.cs" />
+    <Compile Include="ClassParcelas.cs" />
+    <Compile Include="ClassServicos.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
