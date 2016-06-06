@@ -52,17 +52,18 @@
             this.txtMarca = new System.Windows.Forms.TextBox();
             this.txtModelo = new System.Windows.Forms.TextBox();
             this.carroSetDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNovo = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnElminar = new System.Windows.Forms.Button();
             this.combustivelComboBox = new System.Windows.Forms.ComboBox();
             this.btnEnviar = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblidCarro = new System.Windows.Forms.Label();
             numeroChassisLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
             modeloLabel = new System.Windows.Forms.Label();
@@ -164,6 +165,7 @@
             this.carroSetBindingNavigator.Size = new System.Drawing.Size(716, 25);
             this.carroSetBindingNavigator.TabIndex = 0;
             this.carroSetBindingNavigator.Text = "bindingNavigator1";
+            this.carroSetBindingNavigator.RefreshItems += new System.EventHandler(this.carroSetBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorCountItem
             // 
@@ -263,11 +265,11 @@
             this.carroSetDataGridView.AutoGenerateColumns = false;
             this.carroSetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.carroSetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn1});
+            this.dataGridViewTextBoxColumn5});
             this.carroSetDataGridView.DataSource = this.carroSetBindingSource;
             this.carroSetDataGridView.Location = new System.Drawing.Point(250, 54);
             this.carroSetDataGridView.Name = "carroSetDataGridView";
@@ -275,42 +277,6 @@
             this.carroSetDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.carroSetDataGridView.Size = new System.Drawing.Size(446, 220);
             this.carroSetDataGridView.TabIndex = 10;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NumeroChassis";
-            this.dataGridViewTextBoxColumn2.HeaderText = "NumeroChassis";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Marca";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Modelo";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Modelo";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Combustivel";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Combustivel";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCarro";
-            this.dataGridViewTextBoxColumn1.HeaderText = "IdCarro";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
             // 
             // btnNovo
             // 
@@ -379,11 +345,57 @@
             this.btnEnviar.UseVisualStyleBackColor = true;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "IdCarro";
+            this.dataGridViewTextBoxColumn1.HeaderText = "IdCarro";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NumeroChassis";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NumeroChassis";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Marca";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Marca";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Modelo";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Modelo";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Combustivel";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Combustivel";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // lblidCarro
+            // 
+            this.lblidCarro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroSetBindingSource, "IdCarro", true));
+            this.lblidCarro.Location = new System.Drawing.Point(105, 25);
+            this.lblidCarro.Name = "lblidCarro";
+            this.lblidCarro.Size = new System.Drawing.Size(100, 23);
+            this.lblidCarro.TabIndex = 17;
+            this.lblidCarro.Text = "label1";
+            this.lblidCarro.Visible = false;
+            // 
             // frmCriarCarro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 334);
+            this.Controls.Add(this.lblidCarro);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(combustivelLabel1);
             this.Controls.Add(this.combustivelComboBox);
@@ -433,16 +445,17 @@
         private System.Windows.Forms.TextBox txtMarca;
         private System.Windows.Forms.TextBox txtModelo;
         private System.Windows.Forms.DataGridView carroSetDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button btnNovo;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnElminar;
         private System.Windows.Forms.ComboBox combustivelComboBox;
         private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.Label lblidCarro;
     }
 }

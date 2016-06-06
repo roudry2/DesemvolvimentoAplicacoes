@@ -104,8 +104,18 @@ namespace StandAuto
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            frmOficina open = new frmOficina();
+            Auxiliar aux = new Auxiliar();
+            aux.idt = lblidCarro.Text;
+            frmSelecionarCarro open = new frmSelecionarCarro();
             open.Activate();
+            this.Close();
+            
+            
+        }
+
+        private void carroSetBindingNavigator_RefreshItems(object sender, EventArgs e)
+        {
+
         }
     }
 }

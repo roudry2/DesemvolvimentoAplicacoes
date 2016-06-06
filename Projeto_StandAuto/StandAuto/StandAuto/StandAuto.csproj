@@ -70,6 +70,7 @@
     <Compile Include="Aluguer.cs">
       <DependentUpon>ModelDoProf.tt</DependentUpon>
     </Compile>
+    <Compile Include="Auxiliar.cs" />
     <Compile Include="Carro.cs">
       <DependentUpon>ModelDoProf.tt</DependentUpon>
     </Compile>
@@ -118,6 +119,12 @@
     </Compile>
     <Compile Include="frmOficina.Designer.cs">
       <DependentUpon>frmOficina.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSelecionarCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSelecionarCarro.Designer.cs">
+      <DependentUpon>frmSelecionarCarro.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVenda.cs">
       <SubType>Form</SubType>
@@ -179,6 +186,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOficina.resx">
       <DependentUpon>frmOficina.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSelecionarCarro.resx">
+      <DependentUpon>frmSelecionarCarro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVenda.resx">
       <DependentUpon>frmVenda.cs</DependentUpon>

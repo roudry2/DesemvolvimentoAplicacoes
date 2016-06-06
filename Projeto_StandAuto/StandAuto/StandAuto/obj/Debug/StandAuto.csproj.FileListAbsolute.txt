@@ -60,3 +60,4 @@ C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\S
 C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\StandAuto\StandAuto\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.exe
 C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.pdb
+C:\Users\roudry2\Desktop\CTEsP\GIT\DesemvolvimentoAplicacoes\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmSelecionarCarro.resources

@@ -217,7 +217,7 @@
             this.btnCarros.Name = "btnCarros";
             this.btnCarros.Size = new System.Drawing.Size(178, 23);
             this.btnCarros.TabIndex = 4;
-            this.btnCarros.Text = "Adicionar Carro";
+            this.btnCarros.Text = "Selecionar Carro";
             this.btnCarros.UseVisualStyleBackColor = true;
             this.btnCarros.Click += new System.EventHandler(this.btnCarros_Click);
             // 
@@ -286,7 +286,6 @@
             this.tableAdapterManager.ClienteSetTableAdapter = this.clienteSetTableAdapter;
             this.tableAdapterManager.ParcelaSetTableAdapter = null;
             this.tableAdapterManager.ServiçoSetTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendaSetTableAdapter = null;
             // 
             // carroSet_CarroOficinaTableAdapter
