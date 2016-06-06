@@ -45,8 +45,7 @@ namespace StandAuto
 
         private void btnCarros_Click(object sender, EventArgs e)
         {
-            frmSelecionarCarro Scarro = new frmSelecionarCarro();
-            Scarro.ShowDialog();
+           
         }
 
         private void frmOficina_Activated(object sender, EventArgs e)
