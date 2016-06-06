@@ -13,10 +13,10 @@ namespace StandAuto
 {
     public partial class frmOficina : Form
     {
-        Auxiliar db = new Auxiliar();
+        //Auxiliar db = new Auxiliar();
         public frmOficina()
         {
-            db.Open();
+            //db.Open();
             InitializeComponent();
 
         }

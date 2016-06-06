@@ -21,7 +21,7 @@ namespace StandAuto
         public string Kms { get; set; }
         public int ClienteIdCliente { get; set; }
     
-        public virtual CarroAluguer CarroAluguer { get; set; }
         public virtual Cliente Cliente { get; set; }
+        public virtual CarroAluguer CarroAluguer { get; set; }
     }
 }

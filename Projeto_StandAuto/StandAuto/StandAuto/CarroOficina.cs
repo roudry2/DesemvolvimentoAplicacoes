@@ -14,18 +14,10 @@ namespace StandAuto
     
     public partial class CarroOficina : Carro
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CarroOficina()
-        {
-            this.Serviço = new HashSet<Serviço>();
-        }
-    
         public string Matricula { get; set; }
         public string Kms { get; set; }
         public int ClienteIdCliente { get; set; }
     
         public virtual Cliente Cliente { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Serviço> Serviço { get; set; }
     }
 }

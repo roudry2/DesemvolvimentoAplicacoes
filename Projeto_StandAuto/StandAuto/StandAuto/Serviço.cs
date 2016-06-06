@@ -28,6 +28,5 @@ namespace StandAuto
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Parcela> Parcela { get; set; }
-        public virtual CarroOficina CarroOficina { get; set; }
     }
 }
