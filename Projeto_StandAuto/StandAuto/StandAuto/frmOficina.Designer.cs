@@ -55,6 +55,7 @@
             this.txtValor = new System.Windows.Forms.TextBox();
             this.clienteSetTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.ClienteSetTableAdapter();
             this.tableAdapterManager = new StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager();
+            this.carroSet_CarroOficinaTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.CarroSet_CarroOficinaTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).BeginInit();
@@ -76,14 +77,16 @@
             // 
             // lbCliente
             // 
+            this.lbCliente.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clienteSetBindingSource, "IdCliente", true));
             this.lbCliente.DataSource = this.clienteSetBindingSource;
             this.lbCliente.DisplayMember = "Nome";
             this.lbCliente.FormattingEnabled = true;
-            this.lbCliente.Location = new System.Drawing.Point(7, 20);
+            this.lbCliente.Location = new System.Drawing.Point(7, 19);
             this.lbCliente.Name = "lbCliente";
             this.lbCliente.Size = new System.Drawing.Size(193, 420);
             this.lbCliente.TabIndex = 0;
             this.lbCliente.ValueMember = "IdCliente";
+            this.lbCliente.SelectedIndexChanged += new System.EventHandler(this.lbCliente_SelectedIndexChanged);
             // 
             // clienteSetBindingSource
             // 
@@ -286,11 +289,15 @@
             this.tableAdapterManager.UpdateOrder = StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendaSetTableAdapter = null;
             // 
+            // carroSet_CarroOficinaTableAdapter
+            // 
+            this.carroSet_CarroOficinaTableAdapter.ClearBeforeFill = true;
+            // 
             // frmOficina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(904, 472);
+            this.ClientSize = new System.Drawing.Size(912, 482);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtDescrição);
             this.Controls.Add(this.btnParcelas);
@@ -348,5 +355,6 @@
         private System.Windows.Forms.BindingSource clienteSetBindingSource;
         private StandAutoDataSetTableAdapters.ClienteSetTableAdapter clienteSetTableAdapter;
         private StandAutoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private StandAutoDataSetTableAdapters.CarroSet_CarroOficinaTableAdapter carroSet_CarroOficinaTableAdapter;
     }
 }
