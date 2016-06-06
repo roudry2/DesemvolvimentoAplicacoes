@@ -113,7 +113,7 @@ namespace StandAuto
             car.Marca = txtMarca.Text;
             car.Combustivel = combustivelComboBox.Items.ToString();
 
-            clienteSelecionado.CarroOficina.Add(car);
+            //clienteSelecionado.CarroOficina.Add(car);
 
 
 
