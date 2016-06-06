@@ -101,6 +101,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StandAuto.edmx</DependentUpon>
     </Compile>
+    <Compile Include="StandAutoDataSet.cs">
+      <DependentUpon>StandAutoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StandAutoDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

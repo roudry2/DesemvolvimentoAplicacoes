@@ -143,5 +143,12 @@ namespace StandAuto
             dataFimTextBox.ReadOnly = false;
             dataInicioTextBox.ReadOnly = false;
         }
+
+        private void btn_Adicionar_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.aluguerSetBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.standAutoDataSet);
+        }
     }
 }

@@ -12,9 +12,12 @@ namespace StandAuto
 {
     public partial class frmInicio : Form
     {
+        private StandAutoDataSet stat;
         public frmInicio()
         {
             InitializeComponent();
+            stat = new StandAutoDataSet();
+
         }
         public int timerSp;
         public static frmSplash frmSplash;
