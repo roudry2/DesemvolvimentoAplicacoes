@@ -12,11 +12,14 @@ namespace StandAuto
 {
     public partial class frmAddCarroOficina : Form
     {
-        public frmAddCarroOficina()
+        public Cliente clienteSelecionado;
+        public frmAddCarroOficina(Cliente clienteSelect)
         {
             InitializeComponent();
-        }
 
+            this.clienteSelecionado=clienteSelect;
+        }
+        
         private void carroSet_CarroOficinaBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -29,7 +32,25 @@ namespace StandAuto
         {
             // TODO: This line of code loads data into the 'standAutoDataSet.CarroSet_CarroOficina' table. You can move, or remove it, as needed.
             this.carroSet_CarroOficinaTableAdapter.Fill(this.standAutoDataSet.CarroSet_CarroOficina);
+            // TODO: This line of code loads data into the 'standAutoDataSet.CarroSet_CarroOficina' table. You can move, or remove it, as needed.
+            this.carroSet_CarroOficinaTableAdapter.Fill(this.standAutoDataSet.CarroSet_CarroOficina);
+            
+        }
+
+        private void carroSet_CarroOficinaBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.carroSet_CarroOficinaBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.standAutoDataSet);
 
         }
+
+        private void btnCriar_Click(object sender, EventArgs e)
+        {
+            frmCriarCarro cCarro = new frmCriarCarro(clienteSelecionado);
+            cCarro.ShowDialog();
+
+        }
+
     }
 }

@@ -14,15 +14,19 @@ namespace StandAuto
     public partial class frmOficina : Form
     {
         //Auxiliar db = new Auxiliar();
+        private ModelDoProfContainer StandAuto;
 
         private ModelDoProfContainer StandAuto;
         public frmOficina()
         {
-            //db.Open();
             InitializeComponent();
             StandAuto = new ModelDoProfContainer();
             lbCliente.DataSource = StandAuto.ClienteSet.ToList<Cliente>();
-            lbCliente.SelectedItem = null;
+
+            StandAuto = new ModelDoProfContainer();
+            lbCliente.DataSource = StandAuto.ClienteSet.ToList<Cliente>();
+
+                
         }
 
         private void frmOficina_Load(object sender, EventArgs e)
@@ -41,8 +45,7 @@ namespace StandAuto
 
         private void btnCarros_Click(object sender, EventArgs e)
         {
-            frmCriarCarro carro = new frmCriarCarro();
-            carro.ShowDialog();
+           
         }
 
         private void frmOficina_Activated(object sender, EventArgs e)
