@@ -14,11 +14,14 @@ namespace StandAuto
     public partial class frmOficina : Form
     {
         //Auxiliar db = new Auxiliar();
+
+        private ModelDoProfContainer StandAuto;
         public frmOficina()
         {
             //db.Open();
             InitializeComponent();
-
+            StandAuto = new ModelDoProfContainer();
+            lbCliente.DataSource = StandAuto.ClienteSet.ToList<Cliente>();
         }
 
         private void frmOficina_Load(object sender, EventArgs e)
@@ -28,12 +31,7 @@ namespace StandAuto
             // TODO: This line of code loads data into the 'standAutoDataSet.ClienteSet' table. You can move, or remove it, as needed.
             //this.clienteSetTableAdapter.Fill(this.standAutoDataSet.ClienteSet);
             //carrega os clientes na lb
-            
-        
-
-
-
-    }
+        }
 
         private void lvlNomeCliente_Click(object sender, EventArgs e)
         {
@@ -53,16 +51,23 @@ namespace StandAuto
 
         private void lbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //StandAutoDataSet.ClienteSetRow clienteselecionado;
-            ClassCliente clienteselecionado = (ClassCliente)lbCliente.SelectedItem;
-            //clienteselecionado = (StandAutoDataSet.ClienteSetRow)lbCliente.SelectedItem;
-            lblNomeCliente.Text = clienteselecionado.Nome;
-            lblNif.Text = clienteselecionado.NIF;
-            lblNrTele.Text = clienteselecionado.Contacto;
+            if (lbCliente.SelectedItem != null)
+            {
+                Cliente clienteselecionado = (Cliente)lbCliente.SelectedItem;
 
-            lbCarros.DataSource = null;
+                lblNomeCliente.Text = clienteselecionado.Nome;
+                lblNif.Text = clienteselecionado.NIF;
+                lblNrTele.Text = clienteselecionado.Contacto;
 
-            lbCarros.DataSource = clienteselecionado.ClassCarros;
+                lbCarros.DataSource = null;
+
+                lbCarros.DataSource = clienteselecionado.CarroOficina.ToList();
+            }
+        }
+
+        private void lbCliente_MouseClick(object sender, MouseEventArgs e)
+        {
+            
         }
     }
 }
