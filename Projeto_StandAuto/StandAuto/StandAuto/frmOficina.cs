@@ -74,7 +74,7 @@ namespace StandAuto
             {
                 CarroOficina clienteselecionado = (CarroOficina)lbCarros.SelectedItem;
             
-               /* if(clienteselecionado != null)
+               if(clienteselecionado != null)
                 {
                     if((lbServiços.DataSource = clienteselecionado.Serviço.ToList()) != null)
                     {
@@ -82,7 +82,7 @@ namespace StandAuto
                         lbServiços.SelectedItem = null;
                         lbParcelas.DataSource = null;
                     }
-                }*/
+                }
             }
         }
     }

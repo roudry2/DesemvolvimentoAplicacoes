@@ -19,7 +19,7 @@ namespace StandAuto
         public string Estado { get; set; }
         public string Data { get; set; }
         public int ClienteIdCliente { get; set; }
-    
+        
         public virtual Cliente Cliente { get; set; }
         public virtual CarroVenda CarroVenda { get; set; }
     }
