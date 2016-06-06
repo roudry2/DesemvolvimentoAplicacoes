@@ -70,7 +70,6 @@
     <Compile Include="Aluguer.cs">
       <DependentUpon>ModelDoProf.tt</DependentUpon>
     </Compile>
-    <Compile Include="Auxiliar.cs" />
     <Compile Include="Carro.cs">
       <DependentUpon>ModelDoProf.tt</DependentUpon>
     </Compile>
@@ -83,10 +82,6 @@
     <Compile Include="CarroVenda.cs">
       <DependentUpon>ModelDoProf.tt</DependentUpon>
     </Compile>
-    <Compile Include="ClassCarros.cs" />
-    <Compile Include="ClassCliente.cs" />
-    <Compile Include="ClassParcelas.cs" />
-    <Compile Include="ClassServicos.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>ModelDoProf.tt</DependentUpon>
     </Compile>
@@ -95,6 +90,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddCarroOficina.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCarroOficina.Designer.cs">
+      <DependentUpon>frmAddCarroOficina.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAluguer.cs">
       <SubType>Form</SubType>
@@ -119,12 +120,6 @@
     </Compile>
     <Compile Include="frmOficina.Designer.cs">
       <DependentUpon>frmOficina.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSelecionarCarro.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSelecionarCarro.Designer.cs">
-      <DependentUpon>frmSelecionarCarro.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVenda.cs">
       <SubType>Form</SubType>
@@ -175,6 +170,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCarroOficina.resx">
+      <DependentUpon>frmAddCarroOficina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAluguer.resx">
       <DependentUpon>frmAluguer.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,9 +184,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmOficina.resx">
       <DependentUpon>frmOficina.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSelecionarCarro.resx">
-      <DependentUpon>frmSelecionarCarro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVenda.resx">
       <DependentUpon>frmVenda.cs</DependentUpon>

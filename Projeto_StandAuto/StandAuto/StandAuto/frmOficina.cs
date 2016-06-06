@@ -15,9 +15,13 @@ namespace StandAuto
     {
         //Auxiliar db = new Auxiliar();
         private ModelDoProfContainer StandAuto;
+
+        private ModelDoProfContainer StandAuto;
         public frmOficina()
         {
-           InitializeComponent();
+            InitializeComponent();
+            StandAuto = new ModelDoProfContainer();
+            lbCliente.DataSource = StandAuto.ClienteSet.ToList<Cliente>();
 
             StandAuto = new ModelDoProfContainer();
             lbCliente.DataSource = StandAuto.ClienteSet.ToList<Cliente>();
@@ -32,11 +36,6 @@ namespace StandAuto
             // TODO: This line of code loads data into the 'standAutoDataSet.ClienteSet' table. You can move, or remove it, as needed.
             //this.clienteSetTableAdapter.Fill(this.standAutoDataSet.ClienteSet);
             //carrega os clientes na lb
-            
-        
-
-
-
     }
 
         private void lvlNomeCliente_Click(object sender, EventArgs e)
@@ -57,17 +56,25 @@ namespace StandAuto
 
         private void lbCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //StandAutoDataSet.ClienteSetRow clienteselecionado;
-            ClassCliente clienteselecionado = (ClassCliente)lbCliente.SelectedItem;
-            //clienteselecionado = (StandAutoDataSet.ClienteSetRow)lbCliente.SelectedItem;
+            if (lbCliente.SelectedItem != null)
+            {
+                Cliente clienteselecionado = (Cliente)lbCliente.SelectedItem;
+
             lblNomeCliente.Text = clienteselecionado.Nome;
             lblNif.Text = clienteselecionado.NIF;
             lblNrTele.Text = clienteselecionado.Contacto;
 
             lbCarros.DataSource = null;
 
+                lbCarros.DataSource = clienteselecionado.CarroOficina.ToList();
+            }
+        }
+
+        private void lbCliente_MouseClick(object sender, MouseEventArgs e)
+        {
+            
             lbCarros.DataSource = clienteselecionado.
                 
-                }
+        }
     }
 }

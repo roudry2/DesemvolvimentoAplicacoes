@@ -34,6 +34,7 @@
             System.Windows.Forms.Label modeloLabel;
             System.Windows.Forms.Label combustivelLabel1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCriarCarro));
+            System.Windows.Forms.Label idCarroLabel;
             this.standAutoDataSet = new StandAuto.StandAutoDataSet();
             this.carroSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.carroSetTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.CarroSetTableAdapter();
@@ -63,11 +64,12 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblidCarro = new System.Windows.Forms.Label();
+            this.idCarroTextBox = new System.Windows.Forms.TextBox();
             numeroChassisLabel = new System.Windows.Forms.Label();
             marcaLabel = new System.Windows.Forms.Label();
             modeloLabel = new System.Windows.Forms.Label();
             combustivelLabel1 = new System.Windows.Forms.Label();
+            idCarroLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.carroSetBindingNavigator)).BeginInit();
@@ -165,7 +167,6 @@
             this.carroSetBindingNavigator.Size = new System.Drawing.Size(716, 25);
             this.carroSetBindingNavigator.TabIndex = 0;
             this.carroSetBindingNavigator.Text = "bindingNavigator1";
-            this.carroSetBindingNavigator.RefreshItems += new System.EventHandler(this.carroSetBindingNavigator_RefreshItems);
             // 
             // bindingNavigatorCountItem
             // 
@@ -271,7 +272,7 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.carroSetDataGridView.DataSource = this.carroSetBindingSource;
-            this.carroSetDataGridView.Location = new System.Drawing.Point(250, 54);
+            this.carroSetDataGridView.Location = new System.Drawing.Point(232, 12);
             this.carroSetDataGridView.Name = "carroSetDataGridView";
             this.carroSetDataGridView.ReadOnly = true;
             this.carroSetDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -380,22 +381,31 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
-            // lblidCarro
+            // idCarroLabel
             // 
-            this.lblidCarro.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroSetBindingSource, "IdCarro", true));
-            this.lblidCarro.Location = new System.Drawing.Point(105, 25);
-            this.lblidCarro.Name = "lblidCarro";
-            this.lblidCarro.Size = new System.Drawing.Size(100, 23);
-            this.lblidCarro.TabIndex = 17;
-            this.lblidCarro.Text = "label1";
-            this.lblidCarro.Visible = false;
+            idCarroLabel.AutoSize = true;
+            idCarroLabel.Location = new System.Drawing.Point(12, 28);
+            idCarroLabel.Name = "idCarroLabel";
+            idCarroLabel.Size = new System.Drawing.Size(47, 13);
+            idCarroLabel.TabIndex = 16;
+            idCarroLabel.Text = "Id Carro:";
+            // 
+            // idCarroTextBox
+            // 
+            this.idCarroTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.carroSetBindingSource, "IdCarro", true));
+            this.idCarroTextBox.Location = new System.Drawing.Point(105, 28);
+            this.idCarroTextBox.Name = "idCarroTextBox";
+            this.idCarroTextBox.ReadOnly = true;
+            this.idCarroTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idCarroTextBox.TabIndex = 17;
             // 
             // frmCriarCarro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 334);
-            this.Controls.Add(this.lblidCarro);
+            this.Controls.Add(idCarroLabel);
+            this.Controls.Add(this.idCarroTextBox);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(combustivelLabel1);
             this.Controls.Add(this.combustivelComboBox);
@@ -456,6 +466,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.Label lblidCarro;
+        private System.Windows.Forms.TextBox idCarroTextBox;
     }
 }

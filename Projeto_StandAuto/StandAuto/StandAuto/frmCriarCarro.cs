@@ -12,9 +12,11 @@ namespace StandAuto
 {
     public partial class frmCriarCarro : Form
     {
-        public frmCriarCarro()
+        public Cliente clienteSelecionado;
+        public frmCriarCarro(Cliente clienteselect)
         {
             InitializeComponent();
+            this.clienteSelecionado = clienteselect;
         }
 
         private void carroSetBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -104,17 +106,20 @@ namespace StandAuto
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            Auxiliar aux = new Auxiliar();
-            aux.idt = lblidCarro.Text;
-            frmSelecionarCarro open = new frmSelecionarCarro();
-            open.Activate();
-            this.Close();
-            
-            
-        }
+            CarroOficina car = new CarroOficina();
+            car.IdCarro =Convert.ToInt32(idCarroTextBox.Text);
+            car.NumeroChassis = txtChassis.Text;
+            car.Modelo = txtModelo.Text;
+            car.Marca = txtMarca.Text;
+            car.Combustivel = combustivelComboBox.Items.ToString();
 
-        private void carroSetBindingNavigator_RefreshItems(object sender, EventArgs e)
-        {
+            clienteSelecionado.CarroOficina.Add(car);
+
+
+
+            this.Close();
+
+
 
         }
     }

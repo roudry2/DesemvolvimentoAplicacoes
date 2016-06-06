@@ -78,14 +78,12 @@
             // lbCliente
             // 
             this.lbCliente.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.clienteSetBindingSource, "IdCliente", true));
-            this.lbCliente.DataSource = this.clienteSetBindingSource;
-            this.lbCliente.DisplayMember = "Nome";
             this.lbCliente.FormattingEnabled = true;
             this.lbCliente.Location = new System.Drawing.Point(7, 19);
             this.lbCliente.Name = "lbCliente";
             this.lbCliente.Size = new System.Drawing.Size(193, 420);
             this.lbCliente.TabIndex = 0;
-            this.lbCliente.ValueMember = "IdCliente";
+            this.lbCliente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lbCliente_MouseClick);
             this.lbCliente.SelectedIndexChanged += new System.EventHandler(this.lbCliente_SelectedIndexChanged);
             // 
             // clienteSetBindingSource

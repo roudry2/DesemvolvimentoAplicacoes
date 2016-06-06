@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label valorLabel;
+            System.Windows.Forms.Label estadoLabel;
+            System.Windows.Forms.Label dataLabel;
+            System.Windows.Forms.Label nomeLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVenda));
             this.standAutoDataSet = new StandAuto.StandAutoDataSet();
             this.vendaSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -48,26 +52,69 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.vendaSetBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.clienteSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPageVenda = new System.Windows.Forms.TabPage();
-            this.tabPageCarros = new System.Windows.Forms.TabPage();
             this.vendaSetDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeCli = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.valorTextBox = new System.Windows.Forms.TextBox();
+            this.estadoTextBox = new System.Windows.Forms.TextBox();
+            this.dataTextBox = new System.Windows.Forms.TextBox();
+            this.btnNovoCli = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.nomeComboBox = new System.Windows.Forms.ComboBox();
+            valorLabel = new System.Windows.Forms.Label();
+            estadoLabel = new System.Windows.Forms.Label();
+            dataLabel = new System.Windows.Forms.Label();
+            nomeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendaSetBindingNavigator)).BeginInit();
             this.vendaSetBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPageVenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vendaSetDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // valorLabel
+            // 
+            valorLabel.AutoSize = true;
+            valorLabel.Location = new System.Drawing.Point(495, 63);
+            valorLabel.Name = "valorLabel";
+            valorLabel.Size = new System.Drawing.Size(34, 13);
+            valorLabel.TabIndex = 6;
+            valorLabel.Text = "Valor:";
+            // 
+            // estadoLabel
+            // 
+            estadoLabel.AutoSize = true;
+            estadoLabel.Location = new System.Drawing.Point(495, 89);
+            estadoLabel.Name = "estadoLabel";
+            estadoLabel.Size = new System.Drawing.Size(43, 13);
+            estadoLabel.TabIndex = 8;
+            estadoLabel.Text = "Estado:";
+            // 
+            // dataLabel
+            // 
+            dataLabel.AutoSize = true;
+            dataLabel.Location = new System.Drawing.Point(495, 115);
+            dataLabel.Name = "dataLabel";
+            dataLabel.Size = new System.Drawing.Size(33, 13);
+            dataLabel.TabIndex = 10;
+            dataLabel.Text = "Data:";
+            // 
+            // nomeLabel
+            // 
+            nomeLabel.AutoSize = true;
+            nomeLabel.Location = new System.Drawing.Point(493, 39);
+            nomeLabel.Name = "nomeLabel";
+            nomeLabel.Size = new System.Drawing.Size(38, 13);
+            nomeLabel.TabIndex = 14;
+            nomeLabel.Text = "Nome:";
             // 
             // standAutoDataSet
             // 
@@ -127,7 +174,7 @@
             this.vendaSetBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.vendaSetBindingNavigator.Name = "vendaSetBindingNavigator";
             this.vendaSetBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.vendaSetBindingNavigator.Size = new System.Drawing.Size(758, 25);
+            this.vendaSetBindingNavigator.Size = new System.Drawing.Size(770, 25);
             this.vendaSetBindingNavigator.TabIndex = 0;
             this.vendaSetBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -225,59 +272,26 @@
             this.vendaSetBindingNavigatorSaveItem.Text = "Save Data";
             this.vendaSetBindingNavigatorSaveItem.Click += new System.EventHandler(this.vendaSetBindingNavigatorSaveItem_Click);
             // 
-            // clienteSetBindingSource
-            // 
-            this.clienteSetBindingSource.DataMember = "ClienteSet";
-            this.clienteSetBindingSource.DataSource = this.standAutoDataSet;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPageVenda);
-            this.tabControl1.Controls.Add(this.tabPageCarros);
-            this.tabControl1.Location = new System.Drawing.Point(13, 29);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(745, 322);
-            this.tabControl1.TabIndex = 1;
-            // 
-            // tabPageVenda
-            // 
-            this.tabPageVenda.AutoScroll = true;
-            this.tabPageVenda.Controls.Add(this.vendaSetDataGridView);
-            this.tabPageVenda.Location = new System.Drawing.Point(4, 22);
-            this.tabPageVenda.Name = "tabPageVenda";
-            this.tabPageVenda.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageVenda.Size = new System.Drawing.Size(737, 296);
-            this.tabPageVenda.TabIndex = 0;
-            this.tabPageVenda.Text = "Venda";
-            this.tabPageVenda.UseVisualStyleBackColor = true;
-            // 
-            // tabPageCarros
-            // 
-            this.tabPageCarros.Location = new System.Drawing.Point(4, 22);
-            this.tabPageCarros.Name = "tabPageCarros";
-            this.tabPageCarros.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageCarros.Size = new System.Drawing.Size(737, 296);
-            this.tabPageCarros.TabIndex = 1;
-            this.tabPageCarros.Text = "Carros";
-            this.tabPageCarros.UseVisualStyleBackColor = true;
-            // 
             // vendaSetDataGridView
             // 
+            this.vendaSetDataGridView.AllowUserToAddRows = false;
+            this.vendaSetDataGridView.AllowUserToDeleteRows = false;
             this.vendaSetDataGridView.AutoGenerateColumns = false;
             this.vendaSetDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.vendaSetDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
+            this.NomeCli,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
             this.vendaSetDataGridView.DataSource = this.vendaSetBindingSource;
-            this.vendaSetDataGridView.Location = new System.Drawing.Point(6, 6);
+            this.vendaSetDataGridView.Location = new System.Drawing.Point(12, 36);
             this.vendaSetDataGridView.Name = "vendaSetDataGridView";
-            this.vendaSetDataGridView.Size = new System.Drawing.Size(662, 220);
-            this.vendaSetDataGridView.TabIndex = 0;
+            this.vendaSetDataGridView.ReadOnly = true;
+            this.vendaSetDataGridView.Size = new System.Drawing.Size(476, 266);
+            this.vendaSetDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -285,43 +299,134 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "IdVenda";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // NomeCli
+            // 
+            this.NomeCli.HeaderText = "Cliente";
+            this.NomeCli.Name = "NomeCli";
+            this.NomeCli.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Valor";
             this.dataGridViewTextBoxColumn2.HeaderText = "Valor";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Estado";
             this.dataGridViewTextBoxColumn3.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Data";
             this.dataGridViewTextBoxColumn4.HeaderText = "Data";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "ClienteIdCliente";
             this.dataGridViewTextBoxColumn5.HeaderText = "ClienteIdCliente";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Visible = false;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "CarroVenda_IdCarro";
             this.dataGridViewTextBoxColumn6.HeaderText = "CarroVenda_IdCarro";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Visible = false;
+            // 
+            // clienteSetBindingSource
+            // 
+            this.clienteSetBindingSource.DataMember = "ClienteSet";
+            this.clienteSetBindingSource.DataSource = this.standAutoDataSet;
+            // 
+            // valorTextBox
+            // 
+            this.valorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaSetBindingSource, "Valor", true));
+            this.valorTextBox.Location = new System.Drawing.Point(548, 63);
+            this.valorTextBox.Name = "valorTextBox";
+            this.valorTextBox.Size = new System.Drawing.Size(100, 20);
+            this.valorTextBox.TabIndex = 7;
+            // 
+            // estadoTextBox
+            // 
+            this.estadoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaSetBindingSource, "Estado", true));
+            this.estadoTextBox.Location = new System.Drawing.Point(548, 89);
+            this.estadoTextBox.Name = "estadoTextBox";
+            this.estadoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.estadoTextBox.TabIndex = 9;
+            // 
+            // dataTextBox
+            // 
+            this.dataTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vendaSetBindingSource, "Data", true));
+            this.dataTextBox.Location = new System.Drawing.Point(548, 115);
+            this.dataTextBox.Name = "dataTextBox";
+            this.dataTextBox.Size = new System.Drawing.Size(100, 20);
+            this.dataTextBox.TabIndex = 11;
+            // 
+            // btnNovoCli
+            // 
+            this.btnNovoCli.Location = new System.Drawing.Point(675, 36);
+            this.btnNovoCli.Name = "btnNovoCli";
+            this.btnNovoCli.Size = new System.Drawing.Size(75, 23);
+            this.btnNovoCli.TabIndex = 12;
+            this.btnNovoCli.Text = "Novo";
+            this.btnNovoCli.UseVisualStyleBackColor = true;
+            this.btnNovoCli.Click += new System.EventHandler(this.btnNovoCli_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(675, 164);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Adicionar";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(548, 164);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 14;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // nomeComboBox
+            // 
+            this.nomeComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteSetBindingSource, "Nome", true));
+            this.nomeComboBox.FormattingEnabled = true;
+            this.nomeComboBox.Location = new System.Drawing.Point(537, 36);
+            this.nomeComboBox.Name = "nomeComboBox";
+            this.nomeComboBox.Size = new System.Drawing.Size(121, 21);
+            this.nomeComboBox.TabIndex = 15;
             // 
             // frmVenda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(758, 353);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(770, 491);
+            this.Controls.Add(nomeLabel);
+            this.Controls.Add(this.nomeComboBox);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.btnNovoCli);
+            this.Controls.Add(valorLabel);
+            this.Controls.Add(this.valorTextBox);
+            this.Controls.Add(estadoLabel);
+            this.Controls.Add(this.estadoTextBox);
+            this.Controls.Add(dataLabel);
+            this.Controls.Add(this.dataTextBox);
+            this.Controls.Add(this.vendaSetDataGridView);
             this.Controls.Add(this.vendaSetBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmVenda";
@@ -332,10 +437,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.vendaSetBindingNavigator)).EndInit();
             this.vendaSetBindingNavigator.ResumeLayout(false);
             this.vendaSetBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPageVenda.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vendaSetDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,16 +464,21 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton vendaSetBindingNavigatorSaveItem;
         private StandAutoDataSetTableAdapters.ClienteSetTableAdapter clienteSetTableAdapter1;
-        private System.Windows.Forms.BindingSource clienteSetBindingSource;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPageVenda;
         private System.Windows.Forms.DataGridView vendaSetDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCli;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.TabPage tabPageCarros;
+        private System.Windows.Forms.BindingSource clienteSetBindingSource;
+        private System.Windows.Forms.TextBox valorTextBox;
+        private System.Windows.Forms.TextBox estadoTextBox;
+        private System.Windows.Forms.TextBox dataTextBox;
+        private System.Windows.Forms.Button btnNovoCli;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox nomeComboBox;
     }
 }
