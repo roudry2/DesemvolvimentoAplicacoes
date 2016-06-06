@@ -22,6 +22,7 @@ namespace StandAuto
             InitializeComponent();
             StandAuto = new ModelDoProfContainer();
             lbCliente.DataSource = StandAuto.ClienteSet.ToList<Cliente>();
+            lbCliente.SelectedItem = null;
         }
 
         private void frmOficina_Load(object sender, EventArgs e)
@@ -55,10 +56,6 @@ namespace StandAuto
             {
                 Cliente clienteselecionado = (Cliente)lbCliente.SelectedItem;
 
-                lblNomeCliente.Text = clienteselecionado.Nome;
-                lblNif.Text = clienteselecionado.NIF;
-                lblNrTele.Text = clienteselecionado.Contacto;
-
                 lbCarros.DataSource = null;
 
                 lbCarros.DataSource = clienteselecionado.CarroOficina.ToList();
@@ -67,7 +64,26 @@ namespace StandAuto
 
         private void lbCliente_MouseClick(object sender, MouseEventArgs e)
         {
+
             
+        }
+
+        private void lbCarros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbCarros.SelectedItem != null)
+            {
+                CarroOficina clienteselecionado = (CarroOficina)lbCarros.SelectedItem;
+            
+               /* if(clienteselecionado != null)
+                {
+                    if((lbServiços.DataSource = clienteselecionado.Serviço.ToList()) != null)
+                    {
+                        lbServiços.DataSource = clienteselecionado.Serviço.ToList() != null;
+                        lbServiços.SelectedItem = null;
+                        lbParcelas.DataSource = null;
+                    }
+                }*/
+            }
         }
     }
 }

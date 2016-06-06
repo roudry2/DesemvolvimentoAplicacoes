@@ -56,6 +56,7 @@
             this.clienteSetTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.ClienteSetTableAdapter();
             this.tableAdapterManager = new StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager();
             this.carroSet_CarroOficinaTableAdapter = new StandAuto.StandAutoDataSetTableAdapters.CarroSet_CarroOficinaTableAdapter();
+            this.carroSet_CarroOficinaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.clienteSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standAutoDataSet)).BeginInit();
@@ -63,6 +64,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carroSet_CarroOficinaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -172,6 +174,7 @@
             this.lbCarros.Name = "lbCarros";
             this.lbCarros.Size = new System.Drawing.Size(166, 290);
             this.lbCarros.TabIndex = 0;
+            this.lbCarros.SelectedIndexChanged += new System.EventHandler(this.lbCarros_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -284,12 +287,17 @@
             this.tableAdapterManager.ClienteSetTableAdapter = this.clienteSetTableAdapter;
             this.tableAdapterManager.ParcelaSetTableAdapter = null;
             this.tableAdapterManager.ServiçoSetTableAdapter = null;
-            
+            //this.tableAdapterManager.UpdateOrder = StandAuto.StandAutoDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VendaSetTableAdapter = null;
             // 
             // carroSet_CarroOficinaTableAdapter
             // 
             this.carroSet_CarroOficinaTableAdapter.ClearBeforeFill = true;
+            // 
+            // carroSet_CarroOficinaBindingSource
+            // 
+            this.carroSet_CarroOficinaBindingSource.DataMember = "CarroSet_CarroOficina";
+            this.carroSet_CarroOficinaBindingSource.DataSource = this.standAutoDataSet;
             // 
             // frmOficina
             // 
@@ -321,6 +329,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.carroSet_CarroOficinaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,5 +363,6 @@
         private StandAutoDataSetTableAdapters.ClienteSetTableAdapter clienteSetTableAdapter;
         private StandAutoDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private StandAutoDataSetTableAdapters.CarroSet_CarroOficinaTableAdapter carroSet_CarroOficinaTableAdapter;
+        private System.Windows.Forms.BindingSource carroSet_CarroOficinaBindingSource;
     }
 }

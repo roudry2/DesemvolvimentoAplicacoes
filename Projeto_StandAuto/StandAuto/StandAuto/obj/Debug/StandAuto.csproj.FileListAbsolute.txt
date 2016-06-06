@@ -69,7 +69,6 @@ C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Proje
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\bin\Debug\EntityFramework.xml
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.csprojResolveAssemblyReference.cache
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmInicio.resources
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmAluguer.resources
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmCliente.resources
@@ -80,3 +79,4 @@ C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Proje
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmSplash.resources
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.csproj.GenerateResource.Cache
 C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.frmAddCarroOficina.resources
+C:\Users\Eugénia Campos\Desktop\Coisas Abel\Abel Uni\Aplicações\Projeto\Projeto_StandAuto\StandAuto\StandAuto\obj\Debug\StandAuto.csprojResolveAssemblyReference.cache

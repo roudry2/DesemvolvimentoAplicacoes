@@ -11,13 +11,18 @@ namespace StandAuto
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class CarroOficina : Carro
     {
         public string Matricula { get; set; }
         public string Kms { get; set; }
         public int ClienteIdCliente { get; set; }
-    
+        public virtual ICollection<Serviço> Serviço { get; set; } 
         public virtual Cliente Cliente { get; set; }
+
+        public override string ToString()
+        {
+            return IdCarro + " " + Matricula + " - " + Kms + "KMS"; 
+        }
     }
 }
