@@ -36,7 +36,7 @@ namespace StandAuto
             // TODO: This line of code loads data into the 'standAutoDataSet.ClienteSet' table. You can move, or remove it, as needed.
             //this.clienteSetTableAdapter.Fill(this.standAutoDataSet.ClienteSet);
             //carrega os clientes na lb
-    }
+        }
 
         private void lvlNomeCliente_Click(object sender, EventArgs e)
         {
@@ -60,11 +60,7 @@ namespace StandAuto
             {
                 Cliente clienteselecionado = (Cliente)lbCliente.SelectedItem;
 
-            lblNomeCliente.Text = clienteselecionado.Nome;
-            lblNif.Text = clienteselecionado.NIF;
-            lblNrTele.Text = clienteselecionado.Contacto;
-
-            lbCarros.DataSource = null;
+                lbCarros.DataSource = null;
 
                 lbCarros.DataSource = clienteselecionado.CarroOficina.ToList();
             }
@@ -72,9 +68,26 @@ namespace StandAuto
 
         private void lbCliente_MouseClick(object sender, MouseEventArgs e)
         {
+
             
-            lbCarros.DataSource = clienteselecionado.
-                
+        }
+
+        private void lbCarros_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbCarros.SelectedItem != null)
+            {
+                CarroOficina clienteselecionado = (CarroOficina)lbCarros.SelectedItem;
+            
+               /* if(clienteselecionado != null)
+                {
+                    if((lbServiços.DataSource = clienteselecionado.Serviço.ToList()) != null)
+                    {
+                        lbServiços.DataSource = clienteselecionado.Serviço.ToList() != null;
+                        lbServiços.SelectedItem = null;
+                        lbParcelas.DataSource = null;
+                    }
+                }*/
+            }
         }
     }
 }

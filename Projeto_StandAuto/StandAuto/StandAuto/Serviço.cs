@@ -25,8 +25,10 @@ namespace StandAuto
         public string Tipo { get; set; }
         public string DtaSaida { get; set; }
         public string CarroOficinaIdCliente { get; set; }
+        public string CarroOficina_IdCarro { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Parcela> Parcela { get; set; }
+        public virtual CarroOficina CarroOficina { get; set; }
     }
 }
